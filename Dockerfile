@@ -6,4 +6,4 @@ RUN install -m 0755 -o root -g root -t /usr/local/bin bitcoin-0.17.0/bin/*
 ADD bitcoin.conf /root/.bitcoin/bitcoin.conf
 VOLUME /data
 EXPOSE 8332
-CMD bitcoind -conf=/root/.bitcoin/bitcoin.conf -datadir=/data/ -rest -server -rpcport=8332
+CMD bitcoind -conf=/root/.bitcoin/bitcoin.conf -datadir=/data/ -rest -rpcuser=$USERNAME -rpcpassword=$PASSWORD -rpcport=8332
